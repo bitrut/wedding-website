@@ -386,13 +386,13 @@ h1, h2, h3, h4, h5, h6, figure {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.7);
 }
 @media screen and (max-width: 768px) {
   #fh5co-counter,
   #fh5co-event {
     height: inherit;
-    padding: 7em 0;
+    padding: 3em 0;
   }
   #fh5co-counter .display-t,
   #fh5co-counter .display-tc,
@@ -734,6 +734,19 @@ h1, h2, h3, h4, h5, h6, figure {
     width: 100%;
   }
 }
+#fh5co-gallery-list li.one-fourth {
+  width: 24%;
+}
+@media screen and (max-width: 768px) {
+  #fh5co-gallery-list li.one-fourth {
+    width: 49%;
+  }
+}
+@media screen and (max-width: 480px) {
+  #fh5co-gallery-list li.one-fourth {
+    width: 100%;
+  }
+}
 
 #map {
   width: 100%;
@@ -995,7 +1008,7 @@ form label {
 #fh5co-couple,
 #fh5co-gallery,
 .fh5co-section {
-  padding: 7em 0;
+  padding: 3em 0;
   clear: both;
 }
 @media screen and (max-width: 768px) {
@@ -1167,7 +1180,7 @@ form label {
 }
 
 .fh5co-heading {
-  margin-bottom: 5em;
+  margin-bottom: 3em;
 }
 .fh5co-heading.fh5co-heading-sm {
   margin-bottom: 2em;

@@ -460,11 +460,11 @@ h1, h2, h3, h4, h5, h6, figure {
 		left: 0;
 		right: 0;
 		bottom: 0;
-		background: rgba(0, 0, 0, .4);
+		background: rgba(0, 0, 0, .7);
 	}
 	@media screen and (max-width: $screen-sm) {
 		height: inherit;
-		padding: 7em 0;
+		padding: 3em 0;
 		.display-t,
 		.display-tc {
 			height: inherit;
@@ -773,6 +773,15 @@ h1, h2, h3, h4, h5, h6, figure {
 				width: 100%;
 			}
 		}
+		&.one-fourth {
+			width: 24%;
+			@media screen and (max-width: $screen-sm) {
+				width: 49%;
+			}
+			@media screen and (max-width: $screen-xs) {
+				width: 100%;
+			}
+		}
 
 	}
 
@@ -1010,7 +1019,7 @@ form {
 #fh5co-couple,
 #fh5co-gallery,
 .fh5co-section {
-	padding: 7em 0;
+	padding: 3em 0;
 	clear: both;
 	@media screen and (max-width: $screen-sm) {
 		padding: 3em 0;
@@ -1156,7 +1165,7 @@ form {
 
 
 .fh5co-heading {
-	margin-bottom: 5em;
+	margin-bottom: 3em;
 	&.fh5co-heading-sm {
 		margin-bottom: 2em;
 	}
