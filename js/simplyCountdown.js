@@ -163,17 +163,19 @@
         );
 
         if (parameters.enableUtc) {
-            targetDate = new Date(
-                targetTmpDate.getUTCFullYear(),
-                targetTmpDate.getUTCMonth(),
-                targetTmpDate.getUTCDate(),
-                targetTmpDate.getUTCHours(),
-                targetTmpDate.getUTCMinutes(),
-                targetTmpDate.getUTCSeconds()
+            // Use UTC timestamp (ms) to avoid timezone shifts
+            targetDate = Date.UTC(
+                parameters.year,
+                parameters.month - 1,
+                parameters.day,
+                parameters.hours,
+                parameters.minutes,
+                parameters.seconds
             );
         } else {
-            targetDate = targetTmpDate;
-        }
+            // Store as ms as well for consistent arithmetic
+            targetDate = targetTmpDate.getTime();
+         }
 
         Array.prototype.forEach.call(cd, function (countdown) {
             var fullCountDown = createElements(parameters, countdown),
@@ -186,14 +188,8 @@
                     secondWord;
 
                 now = new Date();
-                if (parameters.enableUtc) {
-                    nowUtc = new Date(now.getFullYear(), now.getMonth(), now.getDate(),
-                        now.getHours(), now.getMinutes(), now.getSeconds());
-                    secondsLeft = (targetDate - nowUtc.getTime()) / 1000;
-
-                } else {
-                    secondsLeft = (targetDate - now.getTime()) / 1000;
-                }
+                // targetDate and now.getTime() are both ms since epoch (UTC) — subtract directly
+                secondsLeft = (targetDate - now.getTime()) / 1000;
 
                 if (secondsLeft > 0) {
                     days = parseInt(secondsLeft / 86400, 10);
